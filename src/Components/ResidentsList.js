@@ -36,6 +36,8 @@ function ResidentsList() {
 		
 		let studentIndex;
 		let stdValidy = [];
+
+		
 		for(let index = 0; index < STUDENTS.length; index++){
 			
 						
@@ -56,7 +58,7 @@ function ResidentsList() {
 
 	else if(resident.studentName.toLowerCase() === STUDENTS[studentIndex].name.toLowerCase() && checkValidity(stdValidy[0], stdValidy[1]) === false){
 		
-		// console.log(checkValidity(stdValidy[0], stdValidy[1]))
+		
 		const newResidents = [resident, ...residentList];
 
 		setResidentList(newResidents);
@@ -70,25 +72,6 @@ function ResidentsList() {
 }
 
 
-// 	if(checkValidity(resident.joiningDate, STUDENTS[index].validityDate) === false ){
-// 		setErrorMessage('Sorry, '+resident.studentName+'`s Validity has expired')
-		
-// 		break;
-// 	}
-// 	else{
-// 		const newResidents = [resident, ...residentList];
-
-// 		setResidentList(newResidents);
-// 		// setErrorMessage('');
-// 	}
-// }
-
-
-// else{
-	
-// 	// console.log('Not found')
-// 	setErrorMessage('Sorry '+resident.studentName +' is not a verified Student')
-// }
 
     const completeResident = id =>{
         let updatedResidentList = residentList.map(resident => {
@@ -105,7 +88,6 @@ function ResidentsList() {
 		<div>
 			<Search onSubmit = {addResident}/>
 
-			{/* <div data-testid="errorMsg" className={`error-message ${errorMessage ? "alert error mt-20 slide-up-fade-in" : "" }`} >{errorMessage}</div> */}
 			
 			{errorMessage && (<div data-testid="errorMsg" className="alert error mt-20 slide-up-fade-in">{errorMessage}</div>) }
 			
